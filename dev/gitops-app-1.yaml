@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitops-app-1
+  namespace: argocd
+spec:
+  project: default
+  description: Use helm repo and version to deploy release
+  source:
+    repoURL: 'https://sandeep-sensyne.github.io/gitops-app/'
+    targetRevision: 0.1.2
+    helm:
+      valueFiles:
+        - values.yaml
+    chart: gitops-app
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
