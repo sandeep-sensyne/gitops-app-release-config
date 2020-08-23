@@ -8,7 +8,7 @@ spec:
   description: Use K8S job with git hub to deploy release
   source:
     repoURL: 'https://github.com/sandeep-sensyne/k8s-job.git'
-    targetRevision: ae643cb437ce65072a4a3c865f03364fff74dc7b
+    targetRevision: HEAD
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: dev
