@@ -9,6 +9,7 @@ spec:
   source:
     repoURL: 'https://github.com/sandeep-sensyne/k8s-job.git'
     targetRevision: HEAD
+    path: sampleJob
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: dev
