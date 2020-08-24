@@ -13,12 +13,21 @@ spec:
     plugin:
       name: sopsNdu
       env:
-      - name: AZURE_TENANT_ID
-        value: 5e6aa862-79f2-4bf9-90ce-4a38bb780ac1
-      - name: AZURE_CLIENT_ID
-        value: cd10782d-803b-4e48-8077-d3e60bd4e490
-      - name: AZURE_CLIENT_SECRET
-        value: usr-3.rx3meI9rv3VXr4-r~WtdH-n.9d.C
+        - name: AZURE_TENANT_ID
+          valueFrom:
+            secretKeyRef:
+              name: azspn
+              key: AZURE_TENANT_ID
+        - name: AZURE_CLIENT_ID
+          valueFrom:
+            secretKeyRef:
+              name: azspn
+              key: AZURE_CLIENT_ID
+        - name: AZURE_CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: azspn
+              key: AZURE_CLIENT_SECRET
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: dev
