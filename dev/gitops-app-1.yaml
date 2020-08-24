@@ -8,10 +8,11 @@ spec:
   description: Use helm repo and version to deploy release
   source:
     repoURL: 'https://sandeep-sensyne.github.io/gitops-app/'
-    targetRevision: 0.1.2
+    targetRevision: 0.1.3
     helm:
       valueFiles:
         - values.yaml
+        - dev-secret.yaml
     chart: gitops-app
   destination:
     server: 'https://kubernetes.default.svc'
