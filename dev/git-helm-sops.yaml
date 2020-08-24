@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: git-helm-sops-1
+  namespace: argocd
+spec:
+  project: default
+  description: Use helm repo and version to deploy release
+  source:
+    repoURL: 'https://github.com/sandeep-sensyne/gitops-app.git'
+    targetRevision: HEAD
+    path: helmChart
+    plugin:
+      name: sopsNdu
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
