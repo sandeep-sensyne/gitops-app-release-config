@@ -12,6 +12,14 @@ spec:
     path: helmChart
     plugin:
       name: sopsNdu
+      env:
+      - name: NS_VALUES
+        value: "dev-values.yaml"
+      - name: SOPS_VALUES
+        value: "dev-secret-sops-values.yaml"
+      - name: RELEASE_NAME
+        value: "app1"
+
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: dev
