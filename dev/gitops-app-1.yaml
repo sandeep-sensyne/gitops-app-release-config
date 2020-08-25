@@ -9,10 +9,15 @@ spec:
   source:
     repoURL: 'https://sandeep-sensyne.github.io/gitops-app/'
     targetRevision: 0.1.2
-    helm:
-      valueFiles:
-        - values.yaml
-        - dev-secret.yaml
+    plugin:
+      name: sopsNdu
+      env:
+        - name: NS_VALUES
+          value: "dev-values.yaml"
+        - name: SOPS_VALUES
+          value: "dev-secret-sops-values.yaml"
+        - name: RELEASE_NAME
+          value: "app1"
     chart: gitops-app
   destination:
     server: 'https://kubernetes.default.svc'
