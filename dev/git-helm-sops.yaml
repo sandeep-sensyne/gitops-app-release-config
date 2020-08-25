@@ -8,7 +8,7 @@ spec:
   description: Use helm repo and version to deploy release
   source:
     repoURL: 'https://github.com/sandeep-sensyne/gitops-app.git'
-    targetRevision: HEAD
+    targetRevision: v1.0
     path: helmChart
     plugin:
       name: sopsNdu
