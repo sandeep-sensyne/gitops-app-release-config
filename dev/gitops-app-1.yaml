@@ -17,7 +17,7 @@ spec:
         - name: SOPS_VALUES
           value: "dev-secret-sops-values.yaml"
         - name: RELEASE_NAME
-          value: "app1"
+          value: "app2"
     chart: gitops-app
   destination:
     server: 'https://kubernetes.default.svc'
