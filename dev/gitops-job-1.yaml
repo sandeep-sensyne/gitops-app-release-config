@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: gitops-job-1
   namespace: argocd
+  annotations:
+    recipients.argocd-notifications.argoproj.io: "slack:deployments"
 spec:
   project: default
   description: Use K8S job with git hub to deploy release
