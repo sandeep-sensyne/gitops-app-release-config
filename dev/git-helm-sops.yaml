@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: git-helm-sops-1
   namespace: argocd
+  annotations:
+    recipients.argocd-notifications.argoproj.io: "slack:deployments"
 spec:
   project: default
   description: Use helm repo and version to deploy release
