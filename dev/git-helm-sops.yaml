@@ -5,6 +5,7 @@ metadata:
   namespace: argocd
   annotations:
     recipients.argocd-notifications.argoproj.io: "slack:deployments"
+    environment: dev
 spec:
   project: default
   description: Use helm repo and version to deploy release
