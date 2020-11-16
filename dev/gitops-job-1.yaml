@@ -5,6 +5,7 @@ metadata:
   namespace: argocd
   annotations:
     recipients.argocd-notifications.argoproj.io: "slack:deployments"
+    environment: dev
 spec:
   project: default
   description: Use K8S job with git hub to deploy release
