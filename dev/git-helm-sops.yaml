@@ -26,7 +26,12 @@ spec:
     server: 'https://kubernetes.default.svc'
     namespace: dev
   syncPolicy:
+    retry:
+      limit: 3 
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m
     automated:
       prune: true
       selfHeal: true
-
