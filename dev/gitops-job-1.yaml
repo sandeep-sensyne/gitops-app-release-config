@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
   annotations:
     recipients.argocd-notifications.argoproj.io: "webhook:msteams"
-    environment: dev
+    app.env: dev
     app.name: "articles api"
 spec:
   project: default
