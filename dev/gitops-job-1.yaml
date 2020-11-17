@@ -5,9 +5,8 @@ metadata:
   namespace: argocd
   annotations:
     recipients.argocd-notifications.argoproj.io: "webhook:msteams"
-    notifications:
-      env: dev
-      name: "articles api"
+    env: dev
+    name: "articles api"
 spec:
   project: default
   description: Use K8S job with git hub to deploy release
