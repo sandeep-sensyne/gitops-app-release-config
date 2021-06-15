@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: git-helm-sops-1
-  namespace: argocd
+  namespace: argocd-dev
   annotations:
     recipients.argocd-notifications.argoproj.io: "webhook:msteams"
     environment: dev
